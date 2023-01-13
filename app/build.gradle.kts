@@ -1,44 +1,80 @@
 plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+
+    // Application
+    id(libs.plugins.agp.application.get().pluginId)
+
+    // Kotlin
+    id("kotlin-android")
+
+    // Kapt
+    id("kotlin-kapt")
+
+    // Navigation SafeArgs
+    id(libs.plugins.navigation.safeArgs.get().pluginId)
+
+    // Hilt
+    id(libs.plugins.hilt.android.get().pluginId)
 }
 
 android {
-    namespace 'com.timplifier.countriestechnicaltask'
-    compileSdk 32
+    namespace = "com.timplifier.countries"
+    compileSdk = config.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId "com.timplifier.countriestechnicaltask"
-        minSdk 23
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        applicationId = "com.timplifier.countries"
+        minSdk = config.versions.minSdk.get().toInt()
+        targetSdk = config.versions.targetSdk.get().toInt()
+        versionCode = 1
+        versionName = "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        getByName(config.versions.releaseBuildType.get()) {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+            )
+        }
+        getByName(config.versions.debugBuildType.get()) {
+            applicationIdSuffix = ".debug"
+            isDebuggable = true
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = options.versions.kotlinJvmTargetOptions.get()
+    }
+
+    //ViewBinding
+    buildFeatures {
+        viewBinding = true
     }
 }
 
 dependencies {
+    implementation(project(":features:main"))
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.7.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    // UI Components
+    implementation(libs.bundles.uiComponents)
+
+    // Core
+    implementation(libs.android.core)
+
+    // Coroutines
+    implementation(libs.bundles.coroutines)
+
+    // Lifecycle
+    implementation(libs.bundles.lifecycle)
+
+    // Navigation
+    implementation(libs.bundles.navigation)
+
+    // Hilt
+    implementation(libs.bundles.hilt)
+    kapt(libs.hilt.compiler)
 }
