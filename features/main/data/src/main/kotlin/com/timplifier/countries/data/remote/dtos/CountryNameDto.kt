@@ -2,12 +2,14 @@ package com.timplifier.countries.data.remote.dtos
 
 
 import com.google.gson.annotations.SerializedName
+import com.timplifier.countries.domain.models.CountryNameModel
+import com.timplifier.karsyhkyrremastered.data.utils.DataMapper
 
-data class Name(
+data class CountryNameDto(
     @SerializedName("common")
     val common: String,
     @SerializedName("official")
     val official: String,
-    @SerializedName("nativeName")
-    val nativeName: NativeName?
-)
+) : DataMapper<CountryNameModel> {
+    override fun toDomain() = CountryNameModel(common, official)
+}
