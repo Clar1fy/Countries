@@ -5,10 +5,12 @@ import com.timplifier.countries.domain.models.CurrencyModel
 import com.timplifier.karsyhkyrremastered.data.utils.DataMapper
 
 data class CurrencyDto(
+    @SerializedName("code")
+    val code: String,
     @SerializedName("name")
-    val name: String?,
+    val name: String,
     @SerializedName("symbol")
-    val symbol: String?
+    val symbol: String
 ) : DataMapper<CurrencyModel> {
-    override fun toDomain() = CurrencyModel(name.toString(), symbol.toString())
+    override fun toDomain() = CurrencyModel(code, name, symbol)
 }
