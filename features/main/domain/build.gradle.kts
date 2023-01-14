@@ -10,5 +10,4 @@ java {
 dependencies {
     api(project(":common"))
     api(libs.coroutines.core)
-    implementation(libs.paging.common)
 }

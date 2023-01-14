@@ -11,9 +11,10 @@
     <color name="lola">#BBAABB</color>
     <color name="dark_blue">#051330</color>
     <color name="light_shade_of_cyan">#80FFFFFF</color>
-    <color name="shadeOfSlateGray">#737F9D</color>
+    <color name="shade_of_slate_gray">#737F9D</color>
     <color name="very_dark_shade_of_gray">#222222</color>
     <color name="navy">#141C2E</color>
     <color name="wild_blue_yonder">#505B77</color>
     <color name="safety_orange">#FF7E0A</color>
+    <color name="shadow_blue">#737F9D</color>
 </resources>

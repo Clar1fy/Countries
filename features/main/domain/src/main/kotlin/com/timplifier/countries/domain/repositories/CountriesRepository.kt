@@ -6,4 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface CountriesRepository {
     fun fetchCountries(): Flow<Either<String, List<CountryModel>>>
+    fun fetchCountriesByName(name: String): Flow<Either<String, List<CountryModel>>>
 }

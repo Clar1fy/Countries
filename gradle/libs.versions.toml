@@ -236,6 +236,7 @@ agp-library = { id = "com.android.library", version.ref = "agp" }
 
 #Kotlin
 kotlin-gradle = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-android-extensions = { id = "org.jetbrains.kotlin.android.extensions", version.ref = "kotlin" }
 
 #Navigation
 navigation-safeArgs = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigation" }

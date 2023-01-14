@@ -4,14 +4,16 @@ import com.timplifier.countries.core.base.BaseDiffModel
 import com.timplifier.countries.domain.models.CountryModel
 
 data class CountryUI(
-    val name: CountryNameUI?,
+    val name: String,
     override val symbol: String,
-    val currencies: CurrencyUI?,
-    val capital: List<String>?,
+    val capital: String?,
     val region: String,
     val timezones: List<String>,
     val flags: CountryFlagsUI,
+    val currencies: List<CurrencyUI>?,
 ) : BaseDiffModel<String>
 
 fun CountryModel.toUI() =
-    CountryUI(name?.toUI(), symbol, currencies?.toUI(), capital, region, timezones, flags.toUI())
+    CountryUI(
+        name, symbol, capital, region, timezones, flags.toUI(), currencies?.map { it.toUI() }
+    )

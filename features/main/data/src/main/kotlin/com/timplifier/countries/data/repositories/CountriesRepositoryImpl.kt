@@ -9,6 +9,10 @@ class CountriesRepositoryImpl @Inject constructor(
     private val countriesApiService: CountriesApiService
 ) : CountriesRepository {
     override fun fetchCountries() = makeNetworkRequest {
-        countriesApiService.getAllCountries().map { it.toDomain() }
+        countriesApiService.fetchAllCountries().map { it.toDomain() }
+    }
+
+    override fun fetchCountriesByName(name: String) = makeNetworkRequest {
+        countriesApiService.fetchCountriesByName(name).map { it.toDomain() }
     }
 }

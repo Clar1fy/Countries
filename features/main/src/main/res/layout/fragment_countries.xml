@@ -5,11 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/sfl_countries"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:shimmer_auto_start="true">
 
         <LinearLayout
@@ -62,7 +66,9 @@
     <com.scwang.smart.refresh.layout.SmartRefreshLayout
         android:id="@+id/srl_countries"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <com.scwang.smart.refresh.header.ClassicsHeader
             android:id="@+id/srl_ch_countries"

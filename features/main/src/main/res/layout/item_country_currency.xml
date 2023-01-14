@@ -7,20 +7,22 @@
     android:layout_height="wrap_content"
     android:background="@color/dark_blue">
 
-    <ImageView
-        android:id="@+id/im_flag"
-        android:layout_width="56dp"
-        android:layout_height="29dp"
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_currency_symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginVertical="8dp"
         android:layout_marginStart="16dp"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/white"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription"
-        tools:src="@drawable/flag" />
+        tools:text="Ø" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_country_symbol"
+        android:id="@+id/tv_currency_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="14dp"
@@ -29,21 +31,21 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/im_flag"
+        app:layout_constraintStart_toEndOf="@id/tv_currency_symbol"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="URG" />
+        tools:text="AFN" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_country_name"
+        android:id="@+id/tv_currency_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="16dp"
         android:layout_marginStart="12dp"
         android:textColor="@color/shade_of_slate_gray"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_country_symbol"
+        app:layout_constraintStart_toEndOf="@id/tv_currency_code"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Urugway" />
+        tools:text="Afghan afghani" />
 
     <View
         android:layout_width="match_parent"

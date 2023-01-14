@@ -48,13 +48,10 @@ android {
 }
 
 dependencies {
-    implementation(project(":core"))
+    api(project(":core"))
     api(project(":features:main:data"))
 
     // Hilt
     implementation(libs.bundles.hilt)
     kapt(libs.hilt.compiler)
-
-    // Room
-    kapt(libs.room.compiler)
 }

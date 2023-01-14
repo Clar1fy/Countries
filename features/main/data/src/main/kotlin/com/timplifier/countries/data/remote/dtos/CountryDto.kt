@@ -7,27 +7,27 @@ import com.timplifier.karsyhkyrremastered.data.utils.DataMapper
 
 data class CountryDto(
     @SerializedName("name")
-    val name: CountryNameDto?,
-    @SerializedName("cca2")
+    val name: String,
+    @SerializedName("alpha3Code")
     val symbol: String,
-    @SerializedName("currencies")
-    val currencies: CurrencyDto?,
     @SerializedName("capital")
-    val capital: List<String>?,
+    val capital: String?,
     @SerializedName("region")
     val region: String,
     @SerializedName("timezones")
     val timezones: List<String>,
     @SerializedName("flags")
     val flags: CountryFlagsDto,
+    @SerializedName("currencies")
+    val currencies: List<CurrencyDto>?,
 ) : DataMapper<CountryModel> {
     override fun toDomain() = CountryModel(
-        name?.toDomain(),
+        name,
         symbol,
-        currencies?.toDomain(),
         capital,
         region,
         timezones,
-        flags.toDomain()
+        flags.toDomain(),
+        currencies?.map { it.toDomain() }
     )
 }
