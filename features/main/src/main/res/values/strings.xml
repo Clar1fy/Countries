@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Countries</string>
+    <string name="countries">Countries</string>
     <string name="refresh">Refresh</string>
+    <string name="capital_placeholder">Capital:</string>
+    <string name="region_placeholder">Region:</string>
+    <string name="time_zones">Time zones</string>
+    <string name="currencies">Currencies</string>
 </resources>
