@@ -17,16 +17,6 @@ fun View.invisible() {
     this.visibility = View.INVISIBLE
 }
 
-fun makeMultipleViewsInvisible(vararg views: View) {
-    views.forEach {
-        it.invisible()
-    }
-}
-
-fun <T> View.bindToUIStateLoading(uiState: UIState<T>) {
-    isVisible = uiState is UIState.Loading
-}
-
 fun <T> View.bindToUIStateNotLoading(uiState: UIState<T>) {
     isVisible = uiState !is UIState.Loading
 }
@@ -34,13 +24,17 @@ fun <T> View.bindToUIStateNotLoading(uiState: UIState<T>) {
 fun <T> ShimmerFrameLayout.bindToUIStateLoading(uiState: UIState<T>) {
     when (uiState) {
         is UIState.Loading -> {
-            visible()
-            showShimmer(true)
+            postHandler(1000L) {
+                visible()
+                showShimmer(true)
+            }
         }
         else -> {
-            gone()
-            stopShimmer()
-            hideShimmer()
+            postHandler(1000L) {
+                gone()
+                stopShimmer()
+                hideShimmer()
+            }
         }
     }
 }

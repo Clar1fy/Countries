@@ -6,7 +6,7 @@ import coil.ImageLoader
 import coil.decode.SvgDecoder
 import coil.request.ImageRequest
 
-fun ImageView.loadImageWithGlide(url: String) {
+fun ImageView.loadSvgImage(url: String) {
     ImageLoader.Builder(context).components(fun ComponentRegistry.Builder.() {
         add(SvgDecoder.Factory())
     }).build().enqueue(

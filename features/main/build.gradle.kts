@@ -1,5 +1,3 @@
-import org.gradle.kotlin.dsl.accessors.runtime.extensionOf
-
 plugins {
     // Application
     id(libs.plugins.agp.library.get().pluginId)
@@ -47,7 +45,6 @@ android {
     buildFeatures {
         viewBinding = true
     }
-
 }
 
 dependencies {
