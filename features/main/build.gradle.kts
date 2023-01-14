@@ -1,3 +1,5 @@
+import org.gradle.kotlin.dsl.accessors.runtime.extensionOf
+
 plugins {
     // Application
     id(libs.plugins.agp.library.get().pluginId)
@@ -45,16 +47,14 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
 }
 
 dependencies {
-    implementation(project(":core"))
+    api(project(":core"))
     api(project(":features:main:data"))
 
     // Hilt
     implementation(libs.bundles.hilt)
     kapt(libs.hilt.compiler)
-
-    // Room
-    kapt(libs.room.compiler)
 }
