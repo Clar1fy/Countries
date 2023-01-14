@@ -6,18 +6,34 @@ import androidx.core.view.isVisible
 import androidx.paging.LoadState
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.facebook.shimmer.ShimmerFrameLayout
+import com.scwang.smart.refresh.layout.SmartRefreshLayout
 
 fun <T : Any, VH : RecyclerView.ViewHolder> PagingDataAdapter<T, VH>.bindViewsToPagingLoadStates(
     recyclerView: RecyclerView,
-    viewToBind: View,
     progressBar: ProgressBar? = null,
+    vararg viewsToBindToLoadStateNotLoading: View = emptyArray(),
+    shimmerFrameLayout: ShimmerFrameLayout? = null,
+    smartRefreshLayout: SmartRefreshLayout? = null
 ) {
     addLoadStateListener { loadState ->
         recyclerView.isVisible = loadState.refresh is LoadState.NotLoading
         progressBar?.isVisible = loadState.refresh is LoadState.Loading
-        viewToBind.isVisible = loadState.refresh is LoadState.NotLoading || itemCount == 0
-        if (recyclerView.isVisible && itemCount > 0) {
-            viewToBind.invisible()
+        when (loadState.refresh is LoadState.Loading) {
+            true -> {
+                shimmerFrameLayout?.visible()
+                shimmerFrameLayout?.showShimmer(true)
+                smartRefreshLayout?.isEnabled = false
+            }
+            false -> {
+                shimmerFrameLayout?.stopShimmer()
+                shimmerFrameLayout?.hideShimmer()
+                shimmerFrameLayout?.gone()
+                smartRefreshLayout?.isEnabled = true
+            }
+        }
+        viewsToBindToLoadStateNotLoading.forEach {
+            it.isVisible = loadState.refresh is LoadState.NotLoading
         }
     }
 }
