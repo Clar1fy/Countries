@@ -50,9 +50,8 @@ dependencies {
 
     // UI Components
     api(libs.bundles.uiComponents)
-
-    //Glide
-    implementation(libs.glide.glide)
+    api(libs.shimmer.shimmer)
+    api(libs.bundles.smartSwipeToRefreshCoreAndClassicsHeader)
 
     // Core
     api(libs.android.core)
