@@ -8,5 +8,21 @@
         android:id="@+id/countriesFragment"
         android:name="com.timplifier.main.presentation.ui.fragments.main.countries.CountriesFragment"
         android:label="CountriesFragment"
-        tools:layout="@layout/fragment_countries" />
+        tools:layout="@layout/fragment_countries">
+        <action
+            android:id="@+id/action_countriesFragment_to_countryDetailedFragment"
+            app:destination="@id/countryDetailedFragment"
+            app:enterAnim="@anim/to_right"
+            app:popExitAnim="@anim/from_right"
+            app:popUpTo="@id/countriesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/countryDetailedFragment"
+        android:name="com.timplifier.main.presentation.ui.fragments.main.countries.detailed.CountryDetailedFragment"
+        android:label="CountryDetailedFragment"
+        tools:layout="@layout/fragment_country_detailed">
+        <argument
+            android:name="countryName"
+            app:argType="string" />
+    </fragment>
 </navigation>
