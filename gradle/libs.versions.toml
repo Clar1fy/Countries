@@ -67,6 +67,8 @@ firebaseInAppMessaging = "20.1.2"
 firebaseAdMob = "21.0.0"
 #Glide
 glide = "4.13.0"
+#Coil
+coil = "2.2.2"
 #Koin
 koin = "3.2.2"
 [libraries]
@@ -106,6 +108,8 @@ ui-dotsIndicator = { module = "com.tbuonomo:dotsindicator", version.ref = "dotsI
 ui-emojiMaterial = { module = "com.vanniktech:emoji-material", version.ref = "emojiPopUp" }
 ui-emojiGoogle = { module = "com.vanniktech:emoji-google", version.ref = "emojiPopUp" }
 glide-glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+coil-coil = { module = "io.coil-kt:coil", version.ref = "coil" }
+coil-svg = { module = "io.coil-kt:coil-svg", version.ref = "coil" }
 balloon-balloon = { module = "com.github.skydoves:balloon", version.ref = "balloon" }
 shimmer-shimmer = { module = "com.facebook.shimmer:shimmer", version.ref = "shimmer" }
 ui-swipeToRefresh = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swipeToRefresh" }
@@ -186,7 +190,7 @@ koin-navigation = { module = "io.insert-koin:koin-androidx-navigation", version.
 
 [bundles]
 #UI Components
-uiComponents = ["ui-activity", "ui-fragment", "ui-appCompat", "ui-constraint", "ui-material", "ui-viewBindingPropertyDelegate", "glide-glide", "ui-splashScreen"]
+uiComponents = ["ui-activity", "ui-fragment", "ui-appCompat", "ui-constraint", "ui-material", "ui-viewBindingPropertyDelegate", "glide-glide", "ui-splashScreen", "coil-coil", "coil-svg"]
 #SmartSwipeToRefresh
 smartSwipeToRefresh = ["smartSwipeToRefresh-layout-kernel", "smartSwipeToRefresh-header-classics", "smartSwipeToRefresh-header-radar", "smartSwipeToRefresh-header-falsify", "smartSwipeToRefresh-header-material", "smartSwipeToRefresh-header-material", "smartSwipeToRefresh-header-twoLevel", "smartSwipeToRefresh-footer-ball", "smartSwipeToRefresh-footer-classics"]
 smartSwipeToRefreshCoreAndClassicsHeader = ["smartSwipeToRefresh-layout-kernel", "smartSwipeToRefresh-header-classics"]

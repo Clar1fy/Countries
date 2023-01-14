@@ -51,9 +51,6 @@ dependencies {
     implementation(project(":core"))
     api(project(":features:main:data"))
 
-    // Glide
-    implementation(libs.glide.glide)
-
     // Hilt
     implementation(libs.bundles.hilt)
     kapt(libs.hilt.compiler)

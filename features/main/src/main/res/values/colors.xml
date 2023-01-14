@@ -7,4 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="yankees_blue">#1B253E</color>
+    <color name="lola">#BBAABB</color>
+    <color name="dark_blue">#051330</color>
+    <color name="light_shade_of_cyan">#80FFFFFF</color>
+    <color name="shadeOfSlateGray">#737F9D</color>
+    <color name="very_dark_shade_of_gray">#222222</color>
+    <color name="navy">#141C2E</color>
+    <color name="wild_blue_yonder">#505B77</color>
+    <color name="safety_orange">#FF7E0A</color>
 </resources>
