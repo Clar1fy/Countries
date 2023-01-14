@@ -56,8 +56,4 @@ dependencies {
 
     // Paging
     api(libs.paging.paging)
-
-    // Room
-    api(libs.bundles.room)
-    kapt(libs.room.compiler)
 }
