@@ -1,15 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:layout_width="wrap_content"
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/sfl_countries"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello wordl!"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shimmer_auto_start="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/item_country_shimmer" />
+
+            <include layout="@layout/item_country_shimmer" />
+
+            <include layout="@layout/item_country_shimmer" />
+
+            <include layout="@layout/item_country_shimmer" />
+
+            <include layout="@layout/item_country_shimmer" />
+
+            <include layout="@layout/item_country_shimmer" />
+
+            <include layout="@layout/item_country_shimmer" />
+
+            <include layout="@layout/item_country_shimmer" />
+
+            <include layout="@layout/item_country_shimmer" />
+
+            <include layout="@layout/item_country_shimmer" />
+
+            <include layout="@layout/item_country_shimmer" />
+
+            <include layout="@layout/item_country_shimmer" />
+
+            <include layout="@layout/item_country_shimmer" />
+
+            <include layout="@layout/item_country_shimmer" />
+
+            <include layout="@layout/item_country_shimmer" />
+
+            <include layout="@layout/item_country_shimmer" />
+
+            <include layout="@layout/item_country_shimmer" />
+
+            <include layout="@layout/item_country_shimmer" />
+
+            <include layout="@layout/item_country_shimmer" />
+
+            <include layout="@layout/item_country_shimmer" />
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/srl_countries"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smart.refresh.header.ClassicsHeader
+            android:id="@+id/srl_ch_countries"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_srlSpinnerStyle="MatchLayout"
+            app:srlDrawableArrow="@drawable/ic_progressbar_spinning"
+            app:srlDrawableMarginRight="-12dp"
+            app:srlDrawableProgress="@drawable/ic_progressbar_spinning"
+            app:srlDrawableProgressSize="30dp"
+            app:srlDrawableSize="30dp"
+            app:srlTextFailed=""
+            app:srlTextFinish=""
+            app:srlTextLoading=""
+            app:srlTextPulling=""
+            app:srlTextRefreshing=""
+            app:srlTextRelease=""
+            app:srlTextSecondary=""
+            app:srlTextUpdate="" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_countries"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:visibility="gone"
+            tools:listitem="@layout/item_country" />
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:backgroundTint="@color/safety_orange"
+        android:fontFamily="@font/roboto"
+        android:foreground="?android:attr/actionBarItemBackground"
+        android:text="@string/refresh"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:cornerRadius="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/cpi_refresh"
+        style="@style/BaseProgressBar"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:translationZ="100dp"
+        app:layout_constraintBottom_toBottomOf="@id/btn_refresh"
+        app:layout_constraintEnd_toEndOf="@id/btn_refresh"
+        app:layout_constraintStart_toStartOf="@id/btn_refresh"
+        app:layout_constraintTop_toTopOf="@id/btn_refresh" />
 </androidx.constraintlayout.widget.ConstraintLayout>
