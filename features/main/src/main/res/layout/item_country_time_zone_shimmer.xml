@@ -3,42 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="54dp"
     android:background="@color/dark_blue"
     android:orientation="horizontal"
     tools:ignore="ContentDescription">
 
     <ImageView
-        android:id="@+id/im_country_flag"
-        android:layout_width="56dp"
-        android:layout_height="29dp"
-        android:layout_marginVertical="8dp"
+        android:id="@+id/im_user_actions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:src="@drawable/ic_country_flag_shimmer"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_clock_shimmer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/im_country_symbol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="14dp"
-        android:layout_marginStart="16dp"
-        android:src="@drawable/ic_country_symbol_shimmer"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/im_country_flag"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/im_country_name"
+        android:id="@+id/im_name_user_actions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="16dp"
-        android:layout_marginStart="12dp"
-        android:src="@drawable/ic_country_title_shimmer"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_time_zone_shimmer"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/im_country_symbol"
+        app:layout_constraintStart_toEndOf="@id/im_user_actions"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
