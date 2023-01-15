@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Countries</string>
+    <string name="countries">Countries</string>
+    <string name="refresh">Refresh</string>
+    <string name="capital_placeholder">Capital:</string>
+    <string name="region_placeholder">Region:</string>
+    <string name="time_zones">Time zones</string>
+    <string name="currencies">Currencies</string>
+    <string name="oops_nlooks_like_your_internet_has_been_cut_off_n_and_were_unable_to_connect_back_n_our_service_will_be_available_again_when_your_internet_connection_gets_stable">Oops \nlooks like your internet has been cut off \n and were unable to connect back. \n Our service will be available again when your internet connection gets stable</string>
+    <string name="quit_the_app">Quit the application</string>
+</resources>
